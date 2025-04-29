@@ -2,13 +2,12 @@
 
 ## Discussion
 1. Play with your sorting hat. Are all 10 questions important to create the sorting hat? If you were to remove some questions to improve user experience, which questions would you remove and justify your answer.
-- Not all 10 are needed. I would drop Q6 (mystery book) and Q7 (pet choice). These two don’t help sorting much and speed up the quiz.
+- Not all ten questions are essential for sorting. I would drop question 6 (mystery book) and question 7 (pet choice) because they contribute little useful information to the decision. Those topics tend to introduce noise without improving the house prediction. Removing them makes the quiz faster and keeps the results just as reliable.
 
 2. If you were to improve the sorting hat, what technical improvements would you make?
 - Model Improvements
-  - Tune tree depth or min samples to make it faster and more stable. Or use a random forest instead of one tree for better accuracy.
+  - I would tune the tree’s max depth and minimum leaf samples to avoid overfitting and speed up inference. I’d also apply pruning or quantization to shrink the model and reduce memory use.
 - Hardware Upgrades
-  - Add a heart-rate sensor to track stress.
-  - Add an accelerometer to measure button press speed.
+  - Adding a heart-rate sensor captures stress levels and an accelerometer tracks how quickly users press buttons. These extra signals provide behavioral context that can enhance the sorting accuracy.
 - Algorithm Choice
-  - For just quiz data, a decision tree is simple and fast. With heart-rate or motion data, use random forest because it handles mixed data and is more accurate.
+  - A decision tree still handles mixed quiz and sensor data well and offers fast, explainable predictions on low-power devices. If I needed better accuracy with more complex feature interactions, I’d switch to a small random forest for its improved stability while keeping resource needs moderate.
